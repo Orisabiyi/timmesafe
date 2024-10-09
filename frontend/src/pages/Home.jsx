@@ -3,7 +3,7 @@ import secureIcon from "../assets/secure.svg";
 
 function Home() {
   return (
-    <main className="container mx-auto">
+    <main className="container mx-auto text-dark-gray">
       <header
         className="flex flex-col items-center justify-between h-screen px-40 py-16"
         style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -37,14 +37,19 @@ function Home() {
           style={{ fontWeight: "700" }}
         >
           <div className="w-1/2">
-            <h1 className="text-[3.2rem] leading-tight mb-6">
+            <h1 className="mb-6 leading-tight text-32">
               Time-Locked Wallet For Secure Token Storage
             </h1>
-            <p className="text-[1.8rem] mb-6" style={{ fontWeight: "500" }}>
+            <p className="mb-12 text-18" style={{ fontWeight: "500" }}>
               Lock your tokens until a specific block height, ensuring security
               and flexibility
             </p>
-            <button>Get Started</button>
+            <button
+              className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:border-gray hover:border-2"
+              style={{ fontWeight: "500" }}
+            >
+              Get Started
+            </button>
           </div>
 
           <figure className="w-1/2">
@@ -56,6 +61,10 @@ function Home() {
           </figure>
         </section>
       </header>
+
+      <section className="px-40 py-16">
+        <h1 className="text-32">How It Works</h1>
+      </section>
     </main>
   );
 }
