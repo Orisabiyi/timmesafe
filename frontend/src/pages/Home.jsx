@@ -8,16 +8,16 @@ function Home() {
         style={{ fontFamily: "Montserrat, sans-serif" }}
       >
         <nav className="flex items-center justify-between w-full">
-          <figure className="text-[1.6rem]">
+          <figure className="text-16">
             <Link to="/">Timmesafe</Link>
           </figure>
 
-          <ul className="flex items-center gap-20 text-[1.3rem]">
+          <ul className="flex items-center gap-20 text-13">
             <li>
               <Link to="#works">How it works</Link>
             </li>
             <li>
-              <Link to="#works">Why Timmesafe</Link>
+              <Link to="#why">Why Timmesafe</Link>
             </li>
             <li>
               <button>Login</button>
