@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import secureIcon from "../assets/secure.svg";
+import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
 function Home() {
   return (
@@ -18,10 +19,10 @@ function Home() {
 
           <ul className="flex items-center gap-20 text-13">
             <li>
-              <Link to="#works">How it works</Link>
+              <HashLink to="#how-it-works">How it works</HashLink>
             </li>
             <li>
-              <Link to="#why">Why Timmesafe</Link>
+              <HashLink to="#why">Why Timmesafe</HashLink>
             </li>
             <li>
               <button>Login</button>
@@ -62,8 +63,10 @@ function Home() {
         </section>
       </header>
 
-      <section className="px-40 py-16">
-        <h1 className="text-32">How It Works</h1>
+      <section id="how-it-works" className="px-40 py-16">
+        <h1 className="text-32" style={{ fontWeight: "600" }}>
+          How Timmesafe Works
+        </h1>
       </section>
     </main>
   );
