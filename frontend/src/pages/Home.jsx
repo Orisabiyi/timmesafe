@@ -1,5 +1,9 @@
 function Home() {
-  return <header></header>;
+  return (
+    <main className="bg-mint-green">
+      <header className="h-screen"></header>
+    </main>
+  );
 }
 
 export default Home;
