@@ -6,6 +6,11 @@ export default {
       colors: {
         "mint-green": "#B5D8C0",
       },
+
+      fontSize: {
+        13: "1.3rem",
+        16: "1.6rem",
+      },
     },
   },
   plugins: [],
