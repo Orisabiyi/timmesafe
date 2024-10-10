@@ -102,42 +102,42 @@ function Home() {
             How Timmesafe Works
           </h1>
 
-          <div className="flex items-stretch justify-between gap-14">
-            <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+          <div className="flex flex-col items-stretch justify-between gap-14">
+            <article className="flex flex-col justify-center gap-2 p-12 bg-light-gray">
               <h2
-                className="flex items-start justify-start gap-8 text-18"
+                className="flex items-start justify-start gap-4 text-25"
                 style={{ fontWeight: "500" }}
               >
                 <span>1</span>
                 <span>Set Your Unlock Block Height</span>
               </h2>
-              <p className="leading-tight text-16">
+              <p className="leading-tight text-18">
                 Choose a future block height to lock your tokens securely
               </p>
             </article>
 
-            <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+            <article className="flex flex-col justify-center gap-2 p-12 bg-light-gray">
               <h2
-                className="flex items-start justify-start gap-8 text-18"
+                className="flex items-start justify-start gap-4 text-25"
                 style={{ fontWeight: "500" }}
               >
                 <span>2</span>
                 <span>Send Tokens</span>
               </h2>
-              <p className="leading-tight text-16">
+              <p className="leading-tight text-18">
                 Anyone can send tokens to your time-locked wallet
               </p>
             </article>
 
-            <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+            <article className="flex flex-col justify-center gap-2 p-12 bg-light-gray">
               <h2
-                className="flex items-start justify-start gap-8 text-18"
+                className="flex items-start justify-start gap-4 text-25"
                 style={{ fontWeight: "500" }}
               >
                 <span>3</span>
                 <span>Claim your tokens</span>
               </h2>
-              <p className="leading-tight text-16">
+              <p className="leading-tight text-18">
                 When the block height is reached, your tokens unlock, ready for
                 withdraw or transfer
               </p>
