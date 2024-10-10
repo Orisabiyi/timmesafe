@@ -45,13 +45,18 @@ function Home() {
                 <HashLink to="#how-it-works">How it works</HashLink>
               </li>
               <li>
-                <HashLink to="#why">Why Timmesafe</HashLink>
+                <HashLink to="#why-choose-timmesafe">Why Timmesafe</HashLink>
               </li>
               <li>
                 <button>Login</button>
               </li>
               <li>
-                <button>Sign Up</button>
+                <button
+                  className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:bg-opacity-40"
+                  style={{ fontWeight: "500" }}
+                >
+                  Sign Up
+                </button>
               </li>
             </ul>
           </nav>
@@ -73,7 +78,7 @@ function Home() {
                 security and flexibility
               </p>
               <button
-                className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:border-gray hover:border-2"
+                className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:bg-opacity-40"
                 style={{ fontWeight: "500" }}
               >
                 Get Started
@@ -145,7 +150,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="px-40 py-16">
+        <section className="px-40 py-16" id="why-choose-timmesafe">
           <h1
             className="mb-20 leading-tight text-32"
             style={{ fontWeight: "600" }}
