@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import "animate.css";
 import secureIcon from "../assets/secure.svg";
 import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Home() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(function () {
+    window.onload = function () {
+      setLoaded(true);
+    };
+  }, []);
+
   return (
     <main className="container mx-auto text-dark-gray">
       <header
@@ -10,7 +21,9 @@ function Home() {
         style={{ fontFamily: "Montserrat, sans-serif" }}
       >
         <nav
-          className="flex items-center justify-between w-full"
+          className={`flex items-center justify-between w-full ${
+            loaded ? "animate__animated animate__zoomIn" : ""
+          }`}
           style={{ fontWeight: "500" }}
         >
           <figure className="text-16" style={{ fontWeight: "600" }}>
@@ -37,7 +50,11 @@ function Home() {
           className="flex items-center justify-center gap-32 h-5/6"
           style={{ fontWeight: "700" }}
         >
-          <div className="w-1/2">
+          <div
+            className={`w-1/2 ${
+              loaded ? "animate__animated animate__fadeInLeft" : ""
+            }`}
+          >
             <h1 className="mb-6 leading-tight text-32">
               Time-Locked Wallet For Secure Token Storage
             </h1>
@@ -53,7 +70,11 @@ function Home() {
             </button>
           </div>
 
-          <figure className="w-1/2">
+          <figure
+            className={`w-1/2 ${
+              loaded ? "animate__animated animate__fadeInRight" : ""
+            }`}
+          >
             <img
               src={secureIcon}
               alt="an icon for security"
