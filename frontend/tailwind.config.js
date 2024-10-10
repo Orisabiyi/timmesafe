@@ -8,6 +8,7 @@ export default {
         "dark-mint-green": "#8FBF9E",
         "dark-gray": "#3B3B3B",
         "off-white": "#F8F9FA",
+        "light-gray": "#F2F2F2",
       },
 
       fontSize: {

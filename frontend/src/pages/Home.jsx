@@ -64,8 +64,62 @@ function Home() {
       </header>
 
       <section id="how-it-works" className="px-40 py-16">
-        <h1 className="text-32" style={{ fontWeight: "600" }}>
+        <h1
+          className="mb-20 leading-tight text-32"
+          style={{ fontWeight: "600" }}
+        >
           How Timmesafe Works
+        </h1>
+
+        <div className="flex items-stretch justify-between gap-14">
+          <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+            <h2
+              className="flex items-start justify-start gap-8 text-18"
+              style={{ fontWeight: "500" }}
+            >
+              <span>1</span>
+              <span>Set Your Unlock Block Height</span>
+            </h2>
+            <p className="leading-tight text-16">
+              Choose a future block height to lock your tokens securely
+            </p>
+          </article>
+
+          <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+            <h2
+              className="flex items-start justify-start gap-8 text-18"
+              style={{ fontWeight: "500" }}
+            >
+              <span>2</span>
+              <span>Send Tokens</span>
+            </h2>
+            <p className="leading-tight text-16">
+              Anyone can send tokens to your time-locked wallet
+            </p>
+          </article>
+
+          <article className="flex flex-col justify-center w-1/3 gap-4 p-8 bg-light-gray rounded-2xl">
+            <h2
+              className="flex items-start justify-start gap-8 text-18"
+              style={{ fontWeight: "500" }}
+            >
+              <span>3</span>
+              <span>Claim your tokens</span>
+            </h2>
+            <p className="leading-tight text-16">
+              When the block height is reached, your tokens unlock, ready for
+              withdraw or transfer
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="px-40 py-16">
+        <h1
+          className="mb-20 leading-tight text-32"
+          style={{ fontWeight: "600" }}
+        >
+          Why Choose Timmesafe
         </h1>
       </section>
     </main>
