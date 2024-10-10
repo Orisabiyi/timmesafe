@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import "animate.css";
-import secureIcon from "../assets/secure.svg";
 import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
+
+import "animate.css";
+
+import secureIcon from "../assets/secure.svg";
+import secure from "../assets/secure.png";
+import flexible from "../assets/flexible.png";
+import decentralized from "../assets/decentralized.png";
+
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -142,6 +148,75 @@ function Home() {
         >
           Why Choose Timmesafe
         </h1>
+
+        <ul className="grid grid-cols-2 justify-between gap-16">
+          <li className="bg-light-gray bg-opacity-45 py-24 px-16 flex items-center gap-8 rounded-3xl">
+            <div className="w-[15rem]">
+              <img
+                src={secure}
+                alt=""
+                className="w-full h-full object-cover block"
+              />
+            </div>
+
+            <article className="flex flex-col">
+              <span className="text-32" style={{ fontWeight: "500" }}>
+                Secure
+              </span>
+              <span
+                className="text-18 leading-none"
+                style={{ fontWeight: "400" }}
+              >
+                Token are safely secure until the set time
+              </span>
+            </article>
+          </li>
+
+          <li className="bg-light-gray bg-opacity-45 py-24 px-16 flex items-center gap-8 rounded-3xl">
+            <div className="w-[15rem]">
+              <img
+                src={decentralized}
+                alt=""
+                className="w-full h-full object-cover block"
+              />
+            </div>
+
+            <article className="flex flex-col">
+              <span className="text-32" style={{ fontWeight: "500" }}>
+                Decentralized
+              </span>
+              <span
+                className="text-18 leading-none"
+                style={{ fontWeight: "400" }}
+              >
+                Built on blockchain for transparency and trust
+              </span>
+            </article>
+          </li>
+
+          <li className="bg-light-gray bg-opacity-45 py-24 px-16 flex items-center gap-8 rounded-3xl translate-x-1/2 col-span-2 w-1/2">
+            <div className="w-[15rem]">
+              <img
+                src={flexible}
+                alt=""
+                className="w-full h-full object-cover block"
+              />
+            </div>
+
+            <article className="flex flex-col">
+              <span className="text-32" style={{ fontWeight: "500" }}>
+                Flexible
+              </span>
+              <span
+                className="text-18 leading-none"
+                style={{ fontWeight: "400" }}
+              >
+                Easily transfer ownership or claim your tokens at the right
+                time.
+              </span>
+            </article>
+          </li>
+        </ul>
       </section>
     </main>
   );
