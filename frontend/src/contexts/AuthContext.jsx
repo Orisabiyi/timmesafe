@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { AppConfig, showConnect, UserSession } from "@stacks/connect";
 
 const AuthProvider = createContext();
@@ -35,4 +35,9 @@ function AuthContextProvider({ children }) {
   );
 }
 
-export default { AuthContextProvider };
+function AuthContext() {
+  const context = useContext(AuthProvider);
+  return AuthContext;
+}
+
+export default { AuthContextProvider, AuthContext };
