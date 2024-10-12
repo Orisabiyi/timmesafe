@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { AppConfig, showConnect, UserSession } from "@stacks/connect";
+import { useNavigate } from "react-router-dom";
 
 const AuthProvider = createContext();
 
@@ -8,6 +9,7 @@ export function AuthContextProvider({ children }) {
   const userSession = new UserSession({ appConfig });
 
   // state
+  const navigate = useNavigate();
   const [error, setError] = useState();
   const [address, setAddress] = useState(function () {
     try {
@@ -25,7 +27,7 @@ export function AuthContextProvider({ children }) {
         name: "Timmesafe",
         icon: "",
       },
-      redirectTo: "/hello",
+      redirectTo: "/dashboard",
       onCancel: function (err) {
         setError("It is closed");
       },
