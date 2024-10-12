@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 function Dashboard() {
   return (
     <main className="flex items-stretch min-h-screen">
-      <aside className="w-1/3 h-screen">
+      <aside className="w-1/5 h-screen">
         <ul>
           <li>Lock Tokens</li>
           <li>View Locked Tokens</li>
