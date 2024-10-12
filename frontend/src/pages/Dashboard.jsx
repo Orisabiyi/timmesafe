@@ -1,6 +1,24 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  useEffect(
+    function () {
+      let address;
+      try {
+        address = sessionStorage.getItem("address");
+      } catch (error) {
+        address = null;
+      }
+
+      if (!address) navigate("/");
+    },
+    [navigate]
+  );
+
   return (
     <main className="max-w-screen-xl mx-auto flex items-stretch min-h-screen">
       <aside className="w-1/5 h-screen px-10 py-16 text-dark-gray flex flex-col items-stretch">
