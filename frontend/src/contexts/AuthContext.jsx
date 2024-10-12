@@ -11,13 +11,7 @@ export function AuthContextProvider({ children }) {
 
   // state
   const [error, setError] = useState();
-  const [address, setAddress] = useState(function () {
-    try {
-      return JSON.parse(sessionStorage.getItem("address")) || "";
-    } catch (error) {
-      return "";
-    }
-  });
+  const [address, setAddress] = useState("");
 
   // function
   const handleAuthenticate = function () {
