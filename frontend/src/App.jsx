@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import Dashboard from "./pages/Dashboard";
+import LockToken from "./pages/LockToken";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route index element={<LockToken />} />
+          </Route>
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>
