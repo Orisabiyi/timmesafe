@@ -10,7 +10,11 @@ export function AuthContextProvider({ children }) {
   // state
   const [error, setError] = useState();
   const [address, setAddress] = useState(function () {
-    return JSON.parse(sessionStorage.getItem("address")) || "";
+    try {
+      return JSON.parse(sessionStorage.getItem("address")) || "";
+    } catch (error) {
+      return "";
+    }
   });
 
   // function
@@ -27,15 +31,17 @@ export function AuthContextProvider({ children }) {
       },
       onFinish: function () {
         setError("");
+        sessionStorage.removeItem("address");
 
         const user = userSession.loadUserData();
         setAddress(user.profile.stxAddress.testnet);
+        sessionStorage.setItem("address", user.profile.stxAddress.testnet);
       },
     });
   };
 
   return (
-    <AuthProvider.Provider value={{ handleAuthenticate, error }}>
+    <AuthProvider.Provider value={{ handleAuthenticate, error, address }}>
       {children}
     </AuthProvider.Provider>
   );
