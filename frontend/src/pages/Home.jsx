@@ -50,7 +50,7 @@ function Home() {
                 <HashLink to="#why-choose-timmesafe">Why Timmesafe</HashLink>
               </li>
               <li>
-                <button>Login</button>
+                <button onClick={handleAuthenticate}>Login</button>
               </li>
               <li>
                 <button
@@ -83,6 +83,7 @@ function Home() {
               <button
                 className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:bg-opacity-40"
                 style={{ fontWeight: "500" }}
+                onClick={handleAuthenticate}
               >
                 Get Started
               </button>
