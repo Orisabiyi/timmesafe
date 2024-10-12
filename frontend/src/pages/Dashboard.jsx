@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Dashboard() {
   return (
-    <main className="flex items-stretch min-h-screen">
+    <main className="max-w-screen-xl mx-auto flex items-stretch min-h-screen">
       <aside className="w-1/5 h-screen px-10 py-16 text-dark-gray flex flex-col items-stretch">
         <figure className="mb-40 text-25">Timmesafe</figure>
 
