@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<LockToken />} />
+            <Route path="/lock-token" element={<LockToken />} />
           </Route>
         </Routes>
       </AuthContextProvider>
