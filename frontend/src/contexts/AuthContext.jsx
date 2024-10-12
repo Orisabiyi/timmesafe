@@ -3,7 +3,7 @@ import { AppConfig, showConnect, UserSession } from "@stacks/connect";
 
 const AuthProvider = createContext();
 
-function AuthContext({ children }) {
+function AuthContextProvider({ children }) {
   const appConfig = new AppConfig(["store_write", "publish_data"]);
   const userSession = new UserSession({ appConfig });
 
@@ -35,4 +35,4 @@ function AuthContext({ children }) {
   );
 }
 
-export default AuthContext;
+export default { AuthContextProvider };
