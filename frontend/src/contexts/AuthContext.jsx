@@ -3,27 +3,33 @@ import { AppConfig, showConnect, UserSession } from "@stacks/connect";
 
 const AuthProvider = createContext();
 
-function AuthContextProvider({ children }) {
+export function AuthContextProvider({ children }) {
   const appConfig = new AppConfig(["store_write", "publish_data"]);
   const userSession = new UserSession({ appConfig });
 
   // state
   const [error, setError] = useState();
+  const [address, setAddress] = useState(function () {
+    return JSON.parse(sessionStorage.getItem("address")) || "";
+  });
 
   // function
   const handleAuthenticate = function () {
+    console.log("Hello World");
     showConnect({
       appDetails: {
         name: "Timmesafe",
         icon: "",
       },
       redirectTo: "/hello",
-      onCancel: function () {
+      onCancel: function (err) {
         setError("It is closed");
       },
       onFinish: function () {
         setError("");
-        console.log(userSession.loadUserData());
+
+        const user = userSession.loadUserData();
+        setAddress(user.profile.stxAddress.testnet);
       },
     });
   };
@@ -35,9 +41,7 @@ function AuthContextProvider({ children }) {
   );
 }
 
-function AuthContext() {
+export function AuthContext() {
   const context = useContext(AuthProvider);
-  return AuthContext;
+  return context;
 }
-
-export default { AuthContextProvider, AuthContext };

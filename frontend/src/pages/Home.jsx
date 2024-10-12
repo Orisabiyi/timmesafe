@@ -13,11 +13,11 @@ import decentralized from "../assets/decentralized.png";
 
 import { useEffect } from "react";
 import { useState } from "react";
-import AuthContext from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 
 function Home() {
   const [loaded, setLoaded] = useState(false);
-  // const { handleAuthenticate } = AuthContext();
+  const { handleAuthenticate } = AuthContext();
 
   useEffect(function () {
     window.onload = function () {
@@ -56,7 +56,7 @@ function Home() {
                 <button
                   className="py-4 transition-all duration-200 rounded-full px-14 bg-dark-mint-green text-16 text-off-white hover:bg-opacity-40"
                   style={{ fontWeight: "500" }}
-                  // onClick={handleAuthenticate}
+                  onClick={handleAuthenticate}
                 >
                   Sign Up
                 </button>
