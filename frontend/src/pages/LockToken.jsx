@@ -1,5 +1,5 @@
 function LockToken() {
-  return <section>Lock</section>;
+  return <section className="flex-1">Lock</section>;
 }
 
 export default LockToken;
