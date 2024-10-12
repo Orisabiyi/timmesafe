@@ -7,9 +7,9 @@ const AuthProvider = createContext();
 export function AuthContextProvider({ children }) {
   const appConfig = new AppConfig(["store_write", "publish_data"]);
   const userSession = new UserSession({ appConfig });
+  const navigate = useNavigate();
 
   // state
-  const navigate = useNavigate();
   const [error, setError] = useState();
   const [address, setAddress] = useState(function () {
     try {
@@ -27,7 +27,6 @@ export function AuthContextProvider({ children }) {
         name: "Timmesafe",
         icon: "",
       },
-      redirectTo: "/dashboard",
       onCancel: function (err) {
         setError("It is closed");
       },
@@ -38,6 +37,8 @@ export function AuthContextProvider({ children }) {
         const user = userSession.loadUserData();
         setAddress(user.profile.stxAddress.testnet);
         sessionStorage.setItem("address", user.profile.stxAddress.testnet);
+
+        navigate("/dashboard");
       },
     });
   };
