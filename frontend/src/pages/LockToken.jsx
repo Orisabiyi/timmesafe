@@ -2,9 +2,21 @@ import { useState } from "react";
 
 function LockToken() {
   const [hidden, setHidden] = useState(false);
+  const [beneficiary, setBeneficiary] = useState("");
+  const [duration, setDuration] = useState("");
+  const [token, setToken] = useState("");
+  const [memo, setMemo] = useState("");
+  const [error, setError] = useState("");
+
   const handleHidden = function () {
     setHidden((bool) => !bool);
   };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!beneficiary) return setError("Beneficiary field is required");
+  }
 
   return (
     <section className="flex-1 px-10 py-16 bg-light-gray flex flex-col gap-16 text-dark-gray">
@@ -31,13 +43,16 @@ function LockToken() {
       <form
         action=""
         className="h-full flex flex-col items-stretch gap-3 text-16"
+        onSubmit={handleSubmit}
       >
         <label htmlFor="beneficiary">Beneficiary Wallet Address</label>
         <input
           type="text"
           id="beneficiary"
-          className="outline-none mb-5 px-6 py-4"
+          className="outline-none mb-2 px-6 py-4 rounded-xl"
+          onChange={(e) => setBeneficiary(e.target.value)}
         />
+        {error && <p className="text-red-900 mb-5">{error}</p>}
 
         <label htmlFor="block-height" className="flex flex-col">
           <span>Lock Duration (in Days)</span>
@@ -48,7 +63,8 @@ function LockToken() {
         <input
           type="number"
           id="block-height"
-          className="outline-none mb-5 px-6 py-4"
+          className="outline-none mb-5 px-6 py-4 rounded-xl"
+          onChange={(e) => setDuration(e.target.value)}
         />
 
         <label htmlFor="block-height" className="flex flex-col">
@@ -58,7 +74,8 @@ function LockToken() {
         <input
           type="number"
           id="block-height"
-          className="outline-none mb-5 px-6 py-4"
+          className="outline-none mb-5 px-6 py-4 rounded-xl"
+          onChange={(e) => setToken(e.target.value)}
         />
 
         <label htmlFor="memo" className="flex flex-col">
@@ -67,8 +84,16 @@ function LockToken() {
         </label>
         <textarea
           id="memo"
-          className="flex-1 outline-none px-6 py-4"
+          className="flex-1 outline-none px-6 py-4 mb-5 rounded-xl"
+          onChange={(e) => setMemo(e.target.value)}
         ></textarea>
+
+        <button
+          type="submit"
+          className="bg-mint-green py-4 rounded-xl text-18 hover:bg-dark-mint-green transition-all duration-500"
+        >
+          Lock token
+        </button>
       </form>
     </section>
   );
