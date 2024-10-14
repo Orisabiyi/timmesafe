@@ -20,7 +20,7 @@ function Dashboard() {
   );
 
   return (
-    <main className="max-w-screen-xl mx-auto flex items-stretch min-h-screen">
+    <main className="mx-auto flex items-stretch min-h-screen">
       <aside className="w-1/5 h-screen px-10 py-16 text-dark-gray flex flex-col items-stretch">
         <figure className="mb-16 text-25">
           <Link to="/dashboard">Timmesafe</Link>
