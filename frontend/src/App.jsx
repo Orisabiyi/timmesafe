@@ -17,6 +17,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<LockToken />} />
             <Route path="lock-token" element={<LockToken />} />
+            <Route path="lock-token/:id" element={<LockToken />} />
             <Route path="view-lock-token" element={<ViewLockTokens />} />
           </Route>
         </Routes>
