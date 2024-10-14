@@ -13,7 +13,7 @@ function ViewLockTokens() {
               <b className="font-medium">Token Locked:</b> 2000 stx
             </span>
 
-            <button className="ml-auto bg-dark-mint-green w-10 h-10 rounded-full flex items-center justify-center">
+            <button className="ml-auto bg-dark-mint-green text-white w-10 h-10 rounded-full flex items-center justify-center">
               +
             </button>
           </li>
