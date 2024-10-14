@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function LockToken() {
   const [hidden, setHidden] = useState(false);
@@ -45,7 +46,7 @@ function LockToken() {
     <section className="flex-1 px-10 py-16 bg-light-gray flex flex-col gap-16 text-dark-gray">
       <nav className="self-end flex items-center gap-8 text-16 relative">
         <button className="border-2 border-mint-green px-8 py-1 rounded-xl">
-          + New
+          <Link to="/dashboard/lock-token">+ New</Link>
         </button>
         <button onClick={handleHidden}>{`${sessionStorage.address.slice(
           0,
@@ -72,11 +73,11 @@ function LockToken() {
         <input
           type="text"
           id="beneficiary"
-          className="outline-none mb-2 px-6 py-4 rounded-xl"
+          className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setBeneficiary(e.target.value)}
         />
         {error?.includes("Beneficiary") && (
-          <p className="text-red-900 mb-5">{error}</p>
+          <p className="text-red-900 text-13 mb-5">{error}</p>
         )}
 
         <label htmlFor="block-height" className="flex flex-col">
@@ -88,11 +89,11 @@ function LockToken() {
         <input
           type="number"
           id="block-height"
-          className="outline-none mb-2 px-6 py-4 rounded-xl"
+          className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setDuration(e.target.value)}
         />
         {error?.includes("Duration") && (
-          <p className="text-red-900 mb-5">{error}</p>
+          <p className="text-red-900 text-13 mb-5">{error}</p>
         )}
 
         <label htmlFor="block-height" className="flex flex-col">
@@ -102,12 +103,12 @@ function LockToken() {
         <input
           type="number"
           id="block-height"
-          className="outline-none mb-5 px-6 py-4 rounded-xl"
+          className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setToken(e.target.value)}
         />
 
         {error?.includes("Token") && (
-          <p className="text-red-900 mb-5">{error}</p>
+          <p className="text-red-900 text-13 mb-5">{error}</p>
         )}
 
         <label htmlFor="memo" className="flex flex-col">
