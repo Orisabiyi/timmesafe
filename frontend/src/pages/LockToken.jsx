@@ -34,6 +34,11 @@ function LockToken() {
       setError("Token field is required");
       return setTimeout(() => setError(""), 3000);
     }
+
+    if (Number(token) === "NaN") {
+      setError("Token value should be a number");
+      return setTimeout(() => setError(""), 3000);
+    }
   }
 
   return (
