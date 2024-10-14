@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function LockToken() {
+  const [counter, setCounter] = useState(1);
   const [hidden, setHidden] = useState(false);
   const [beneficiary, setBeneficiary] = useState("");
   const [duration, setDuration] = useState("");
@@ -11,6 +12,15 @@ function LockToken() {
 
   const handleHidden = function () {
     setHidden((bool) => !bool);
+  };
+
+  const handleNew = function () {
+    setCounter((i) => i + 1);
+    setBeneficiary("");
+    setDuration("");
+    setToken("");
+    setMemo("");
+    setError("");
   };
 
   function handleSubmit(e) {
@@ -45,8 +55,11 @@ function LockToken() {
   return (
     <section className="flex-1 px-10 py-16 bg-light-gray flex flex-col gap-16 text-dark-gray">
       <nav className="self-end flex items-center gap-8 text-16 relative">
-        <button className="border-2 border-mint-green px-8 py-1 rounded-xl">
-          <Link to="/dashboard/lock-token">+ New</Link>
+        <button
+          className="border-2 border-mint-green px-8 py-1 rounded-xl"
+          onClick={handleNew}
+        >
+          <Link to={`/dashboard/lock-token/${counter}`}>+ New</Link>
         </button>
         <button onClick={handleHidden}>{`${sessionStorage.address.slice(
           0,
@@ -64,6 +77,7 @@ function LockToken() {
           </ul>
         )}
       </nav>
+
       <form
         action=""
         className="h-full flex flex-col items-stretch gap-3 text-16"
@@ -72,6 +86,7 @@ function LockToken() {
         <label htmlFor="beneficiary">Beneficiary Wallet Address</label>
         <input
           type="text"
+          value={beneficiary}
           id="beneficiary"
           className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setBeneficiary(e.target.value)}
@@ -88,6 +103,7 @@ function LockToken() {
         </label>
         <input
           type="number"
+          value={duration}
           id="block-height"
           className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setDuration(e.target.value)}
@@ -102,6 +118,7 @@ function LockToken() {
         </label>
         <input
           type="number"
+          value={token}
           id="block-height"
           className="outline-none mb-1 px-6 py-4 rounded-xl"
           onChange={(e) => setToken(e.target.value)}
@@ -117,6 +134,7 @@ function LockToken() {
         </label>
         <textarea
           id="memo"
+          value={memo}
           className="flex-1 outline-none px-6 py-4 mb-5 rounded-xl"
           onChange={(e) => setMemo(e.target.value)}
         ></textarea>
