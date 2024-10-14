@@ -15,7 +15,25 @@ function LockToken() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!beneficiary) return setError("Beneficiary field is required");
+    if (!beneficiary) {
+      setError("Beneficiary field is required");
+      return setTimeout(() => setError(""), 3000);
+    }
+
+    if (!duration) {
+      setError("Duration field is required");
+      return setTimeout(() => setError(""), 3000);
+    }
+
+    if (Number(duration) === "NaN") {
+      setError("Duration value must be numbers");
+      return setTimeout(() => setError(""), 3000);
+    }
+
+    if (!token) {
+      setError("Token field is required");
+      return setTimeout(() => setError(""), 3000);
+    }
   }
 
   return (
@@ -52,7 +70,9 @@ function LockToken() {
           className="outline-none mb-2 px-6 py-4 rounded-xl"
           onChange={(e) => setBeneficiary(e.target.value)}
         />
-        {error && <p className="text-red-900 mb-5">{error}</p>}
+        {error?.includes("Beneficiary") && (
+          <p className="text-red-900 mb-5">{error}</p>
+        )}
 
         <label htmlFor="block-height" className="flex flex-col">
           <span>Lock Duration (in Days)</span>
@@ -63,9 +83,12 @@ function LockToken() {
         <input
           type="number"
           id="block-height"
-          className="outline-none mb-5 px-6 py-4 rounded-xl"
+          className="outline-none mb-2 px-6 py-4 rounded-xl"
           onChange={(e) => setDuration(e.target.value)}
         />
+        {error?.includes("Duration") && (
+          <p className="text-red-900 mb-5">{error}</p>
+        )}
 
         <label htmlFor="block-height" className="flex flex-col">
           <span>Token to lock</span>
@@ -77,6 +100,10 @@ function LockToken() {
           className="outline-none mb-5 px-6 py-4 rounded-xl"
           onChange={(e) => setToken(e.target.value)}
         />
+
+        {error?.includes("Token") && (
+          <p className="text-red-900 mb-5">{error}</p>
+        )}
 
         <label htmlFor="memo" className="flex flex-col">
           <span>Memo</span>
